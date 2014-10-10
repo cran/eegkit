@@ -1,7 +1,7 @@
 \name{eegica}
 \alias{eegica}
 \title{
-Independent Component Analysis of EEG data
+Independent Component Analysis of EEG Data
 }
 \description{
 Computes temporal (default) or spatial ICA decomposition of EEG data. Can use Infomax (default), FastICA, or JADE algorithm. ICA computations are conducted via \code{\link[ica]{icaimax}}, \code{\link[ica]{icafast}}, or \code{\link[ica]{icajade}} from the \code{ica} package.
@@ -60,7 +60,7 @@ Cardoso, J.F., & Souloumiac, A. (1996). Jacobi angles for simultaneous diagonali
 
 Helwig, N.E. (in prep). On the relationship between FastICA and Infomax: Fast and robust fixed point algorithms for information-maximization.
 
-Helwig, N.E. (2014). \emph{ica: Independent Componenet Analysis}. http://CRAN.R-project.org/package=ica
+Helwig, N.E. (2014). \emph{ica: Independent Component Analysis}. http://CRAN.R-project.org/package=ica
 
 Helwig, N.E. & Hong, S. (2013). A critique of Tensor Probabilistic Independent Component Analysis: Implications and recommendations for multi-subject fMRI data analysis. \emph{Journal of Neuroscience Methods, 213}, 263-273.
 

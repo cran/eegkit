@@ -2,7 +2,7 @@
 \alias{eeghead}
 \docType{data}
 \title{
-Dummy head for 3d EEG plots
+Dummy Head for 3d EEG Plots
 }
 \description{
 Contains mesh3d object of dummy head, which is used in the plotting functions \code{\link{eegcap}} and \code{\link{eegspace}}. This is a transformed (translated, rotated, and rescaled) vesion of the \code{dummyhead} object from the \code{Rvcg} package.

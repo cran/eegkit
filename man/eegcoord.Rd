@@ -2,7 +2,7 @@
 \alias{eegcoord}
 \docType{data}
 \title{
-EEG cap coordinates (3d and 2d projection)
+EEG Cap Coordinates (3d and 2d Projection)
 }
 \description{
 Three-dimensional electroencephalography (EEG) electrode coordinates (measured in cm), and corresponding projection onto two-dimensional xy plane. Contains 84 scalp electrodes, as well as nose and ears.

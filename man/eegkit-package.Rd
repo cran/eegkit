@@ -2,9 +2,9 @@
 \alias{eegkit-package}
 \alias{eegkit}
 \docType{package}
-\title{Toolkit for electroencephalography data}
+\title{Toolkit for Electroencephalography Data}
 \description{
-Analysis and visualization tools for electroencephalography (EEG) data. Includes functions for plotting (a) EEG caps, (b) single- and multi-channel EEG time courses, and (c) EEG spatial maps. Also includes smoothing and Independent Component Analysis functions for EEG data analysis.
+Analysis and visualization tools for electroencephalography (EEG) data. Includes functions for plotting (a) EEG caps, (b) single- and multi-channel EEG time courses, and (c) EEG spatial maps. Also includes smoothing and Independent Component Analysis functions for EEG data analysis, and a function for simulating event-related potential EEG data.
 }
 \details{
 %\tabular{ll}{
@@ -14,7 +14,7 @@ Analysis and visualization tools for electroencephalography (EEG) data. Includes
 %Date: \tab 2013-08-31\cr
 %License: \tab GPL (>=2)\cr
 %}
-The function \code{\link{eegcap}} plots EEG caps (according to 10-20 system) in two or three dimensions. The function \code{\link{eegtime}} plots EEG time courses. The function \code{\link{eegspace}} plots EEG spatial maps. The function \code{\link{eegica}} calculates temporal or spatial ICA decomposition of EEG data. The function \code{\link{eegsmooth}} performs temporal and/or spatial smoothing of EEG data.
+The functions \code{\link{eegcap}} and \code{\link{eegcapdense}} plot EEG caps (according to 10-20 system) in two or three dimensions. The functions \code{\link{eegtime}} and \code{\link{eegtimemc}} plot EEG time courses. The function \code{\link{eegspace}} plots EEG spatial maps. The function \code{\link{eegica}} calculates temporal or spatial ICA decomposition of EEG data. The function \code{\link{eegsmooth}} performs temporal and/or spatial smoothing of EEG data. The function \code{\link{eegsim}} can be used to simulate event-related potential EEG data.
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>
@@ -35,17 +35,19 @@ Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
   
   Cardoso, J.F., & Souloumiac, A. (1996). Jacobi angles for simultaneous diagonalization. \emph{SIAM Journal on Matrix Analysis and Applications, 17}, 161-164.
 
+  Harrell, F., Dupont, C., and Others. \emph{Hmisc: Harrell Miscellaneous}. http://CRAN.R-project.org/package=Hmisc
+
   Helwig, N.E. (in prep). On the relationship between FastICA and Infomax: Fast and robust fixed point algorithms for information-maximization.
   
   Helwig, N. E. (2013). \emph{Fast and stable smoothing spline analysis of variance models for large samples with applications to electroencephalography data analysis}. Unpublished doctoral dissertation. University of Illinois at Urbana-Champaign.
   
-  Helwig, N.E. (2014). \emph{bigsplines: Smoothing splines for large samples}. http://CRAN.R-project.org/package=bigsplines
+  Helwig, N.E. (2014). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
 
-  Helwig, N.E. (2014). \emph{ica: Independent Componenet Analysis}. http://CRAN.R-project.org/package=ica
+  Helwig, N.E. (2014). \emph{ica: Independent Component Analysis}. http://CRAN.R-project.org/package=ica
 
   Helwig, N.E. & Hong, S. (2013). A critique of Tensor Probabilistic Independent Component Analysis: Implications and recommendations for multi-subject fMRI data analysis. \emph{Journal of Neuroscience Methods, 213}, 263-273.
   
-  Helwig, N. E. and Ma, P. (in prep). Nonparametric Gaussian regression for ultra large samples: Scalable computation via rounding parameters. 
+  Helwig, N. E. and Ma, P. (in prep). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. 
   
   Helwig, N. E. and Ma, P. (in press). Fast and stable multiple smoothing parameter selection in smoothing spline analysis of variance models with large samples. \emph{Journal of Computational and Graphical Statistics}.
 
@@ -59,5 +61,5 @@ Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
 }
 \keyword{ package }
 \examples{
-# See examples for eegcap, eegtime, eegspace, eegica, and eegsmooth
+# See examples for eegcap, eegcapdense, eegica, eegsim, eegsmooth, eegspace, eegtime, and eegtimemc
 }

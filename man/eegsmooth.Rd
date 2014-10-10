@@ -1,7 +1,7 @@
 \name{eegsmooth}
 \alias{eegsmooth}
 \title{
-Spatial and/or temporal smoothing of EEG data
+Spatial and/or Temporal Smoothing of EEG Data
 }
 \description{
 Smooths single- or multi-channel electroencephalography (EEG) with respect to space and/or time. Uses the \code{\link[bigsplines]{bigspline}}, \code{\link[bigsplines]{bigtps}}, and \code{\link[bigsplines]{bigssa}} functions (from \code{bigsplines} package) for smoothing.
@@ -50,7 +50,9 @@ For spatial-temporal smoothing: an object of class "ssa" (see \code{\link[bigspl
 \references{
   Helwig, N. E. (2013). \emph{Fast and stable smoothing spline analysis of variance models for large samples with applications to electroencephalography data analysis}. Unpublished doctoral dissertation. University of Illinois at Urbana-Champaign.
   
-  Helwig, N. E. and Ma, P. (in prep). Nonparametric Gaussian regression for ultra large samples: Scalable computation via rounding parameters. 
+  Helwig, N.E. (2014). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
+  
+  Helwig, N. E. and Ma, P. (in prep). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. 
   
   Helwig, N. E. and Ma, P. (in press). Fast and stable multiple smoothing parameter selection in smoothing spline analysis of variance models with large samples. \emph{Journal of Computational and Graphical Statistics}.
 }

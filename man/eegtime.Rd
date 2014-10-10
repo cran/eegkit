@@ -1,7 +1,7 @@
 \name{eegtime}
 \alias{eegtime}
 \title{
-Plots single-channel EEG time course
+Plots Single-Channel EEG Time Course
 }
 \description{
 Creates plot of single-channel electroencephalography (EEG) time course with optional confidence interval. User can control the plot orientation, line types, line colors, etc.

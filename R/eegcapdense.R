@@ -1,15 +1,17 @@
-eegcap <- 
+eegcapdense <- 
   function(electrodes="10-10",type=c("3d","2d"),plotlabels=TRUE,
            plotaxes=FALSE,main="",xyzlab=NULL,cex.point=NULL,
            col.point=NULL,cex.label=NULL,col.label=NULL,nose=TRUE,
-           ears=TRUE,head=TRUE,col.head="AntiqueWhite",index=FALSE,...){
-    ###### Plots EEG Cap with Selected Electrodes (2D or 3D)
+           ears=TRUE,head=TRUE,col.head="AntiqueWhite",index=FALSE,zconst=0.5,...){
+    ###### Plots EEG Cap with Dense Electrodes (2D or 3D)
     ###### Nathaniel E. Helwig (helwig@umn.edu)
     ###### Last modified: September 26, 2014
     
     ### initial checks
     eegcoord=NULL
     data(eegcoord,envir=environment())
+    eegdense=NULL
+    data(eegdense,envir=environment())
     enames=rownames(eegcoord)
     if(electrodes[1]=="10-10"){
       eegidx=1:87
@@ -20,6 +22,11 @@ eegcap <-
     }else {eegidx=match(toupper(electrodes),enames)}
     type=type[1]
     if(any(type==c("2d","3d"))==FALSE){stop("Incorrect 'type' input.")}
+    
+    ### which dense coordinates
+    zmin=min(eegcoord[eegidx,3])
+    widx=which(eegdense[,3]>=(zmin-zconst))
+    cat(length(widx),"electrode cap")
     
     ### plot 2d or 3d electrodes
     if(type=="2d"){
@@ -55,18 +62,18 @@ eegcap <-
       
       # plot electrodes
       if(plotlabels){
-        if(is.null(cex.point)){cex.point=2.75}
-        if(is.null(cex.label)){cex.label=0.5}
+        if(is.null(cex.point)){cex.point=1}
+        if(is.null(cex.label)){cex.label=1}
         if(is.null(col.label[1])){col.label="blue"}
         if(is.null(col.point[1])){col.point="green"}
-        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,col=col.point,pch=19)
-        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,pch=21)
+        points(eegdense[widx,4],eegdense[widx,5],cex=cex.point,col=col.point,pch=19)
+        points(eegdense[widx,4],eegdense[widx,5],cex=cex.point,pch=21)
         text(eegcoord[eegidx,4],eegcoord[eegidx,5],labels=enames[eegidx],cex=cex.label,col=col.label)
       } else {
         if(is.null(cex.point)){cex.point=1}
-        if(is.null(col.point[1])){col.point="green"}
-        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,col=col.point,pch=19)
-        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,pch=21)
+        if(is.null(col.point[1])){col.point="white"}
+        points(eegdense[widx,4],eegdense[widx,5],cex=cex.point,col=col.point,pch=19)
+        points(eegdense[widx,4],eegdense[widx,5],cex=cex.point,pch=21)
       }
       
     } else {
@@ -84,7 +91,7 @@ eegcap <-
       plot3d(eegcoord[eegidx,1],eegcoord[eegidx,2],eegcoord[eegidx,3],
              xlab=xyzlab[1],ylab=xyzlab[2],zlab=xyzlab[3],type="n",...)
       if(plotaxes){axes3d()}
-      points3d(eegcoord[eegidx,1],eegcoord[eegidx,2],eegcoord[eegidx,3],
+      points3d(eegdense[widx,1],eegdense[widx,2],eegdense[widx,3],
                size=cex.point,col=col.point,pch=19)
       if(plotlabels){
         if(is.null(cex.label)){cex.label=1.25}
@@ -92,7 +99,7 @@ eegcap <-
         text3d(eegcoord[eegidx,1]*1.05,eegcoord[eegidx,2]*1.05,eegcoord[eegidx,3]*1.05,
                texts=enames[eegidx],cex=cex.label,col=col.label)
       } else {
-        plot3d(eegcoord[eegidx,1],eegcoord[eegidx,2],eegcoord[eegidx,3],
+        plot3d(eegdense[widx,1],eegdense[widx,2],eegdense[widx,3],
                xlab=xyzlab[1],ylab=xyzlab[2],zlab=xyzlab[3],size=cex.point,
                col=col.point,pch=19,...)
         if(plotaxes){axes3d()}
@@ -106,7 +113,7 @@ eegcap <-
       par3d(scale=rep(1,3))
       
     } # end if(type=="2D")
-  
-    if(index){return(eegidx)}
     
-}
+    if(index){return(widx)}
+    
+  }

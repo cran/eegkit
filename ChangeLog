@@ -1,0 +1,15 @@
+Changes from ver 1.0-0 to ver 1.0-1     [Oct-10-2014]
+   1) eegkit-package
+	*   Improvements for eegcap plotting (see eegcap)
+	*   Added function to plot dense EEG cap(see eegcapdense)
+	*   Added function to simulate EEG data (see eegsim)
+	*   Added function to plot multi-channel EEG time courses (see eegtimemc)
+   2) eegcap
+	*   Set par3d(scale=rep(1,3)) to ensure proper display of 3d cap
+	*   Added option to return channel indices
+   3) eegcapdense
+	*   New function for plotting dense EEG cap (see eegdense)
+   4) eegsim
+	*   New function for simulating event-related potential EEG data
+   5) eegtimemc
+	*   New function for plotting multi-channel EEG time courses

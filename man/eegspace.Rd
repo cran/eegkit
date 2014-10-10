@@ -1,7 +1,7 @@
 \name{eegspace}
 \alias{eegspace}
 \title{
-Plots multi-channel EEG spatial map
+Plots Multi-Channel EEG Spatial Map
 }
 \description{
 Creates plot of multi-channel electroencephalography (EEG) spatial map. User can control the plot type (2d or 3d), the colormap, color, etc.

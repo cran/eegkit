@@ -2,7 +2,7 @@
 \alias{eegmesh}
 \docType{data}
 \title{
-EEG cap for dense coordinates
+EEG Cap for Dense Coordinates
 }
 \description{
 Contains mesh3d object of \code{\link{eegdense}}, which is used in the plotting function \code{\link{eegspace}}.
