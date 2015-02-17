@@ -1,3 +1,45 @@
+Changes from ver 1.0-1 to ver 1.0-2     [Feb-17-2015]
+   1) eegkit-package
+	*   Improvements/updates to all functions
+	*   Examples depending on “rgl” are not run
+	*   Binaries now available for all systems
+   2) eegcap
+	*   3d examples (depending on “rgl”) are not run
+	*   Minor updates to function internals
+   3) eegcapdense
+	*   3d examples (depending on “rgl”) are not run
+	*   Minor updates to function internals
+   4) eegica
+	*   Plots in examples are commented
+	*   Minor updates to function internals
+   5) eegsim
+	*   Example is no longer run
+	*   Minor updates to function internals
+   6) eegsmooth
+	*   Temporal smoothing defaults changed: 
+              - default nknots changed from 20 to 30
+              - default rparm changed from 0.01 to 0.001
+	*   Spatiotemporal smoothing defaults changed: 
+              - default nknots changed from 300 to 500
+              - default rparm for time changed from 0.01 to 0.001
+	*   Minor updates to function internals
+   7) eegspace
+	*   Slightly changed default colors (for better distinction)
+	*   Reduced default number of colors from 100 to 25
+	*   Returns old par on exit (so subsequent plots look good)
+	*   Minor updates to function internals
+   8) eegtime
+	*   Added option for polygon standard error plotting
+	*   Changed default to plotting standard error polygons
+	*   Changed default colors for voltage and standard error
+	*   Minor updates to function internals
+   9) eegtimemc
+	*   Added option for plotting standard errors (voltSE input)
+	*   Example is no longer run
+	*   Minor updates to function internals
+
+
+
 Changes from ver 1.0-0 to ver 1.0-1     [Oct-10-2014]
    1) eegkit-package
 	*   Improvements for eegcap plotting (see eegcap)

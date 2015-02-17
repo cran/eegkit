@@ -8,7 +8,7 @@ Creates plot of multi-channel electroencephalography (EEG) time courses with sub
 }
 \usage{
 eegtimemc(time,voltmat,channel,size=c(0.75,0.75),
-          vadj=0.5,hadj=0.5,xlab="",ylab="",...)
+          vadj=0.5,hadj=0.5,xlab="",ylab="",voltSE=NULL,...)
 }
 \arguments{
   \item{time}{
@@ -35,6 +35,9 @@ X-axis label for each subplot.
   \item{ylab}{
 Y-axis label for each subplot.
 }
+  \item{voltSE}{
+Matrix of voltage standard errors (same size as \code{voltmat}).
+}
   \item{...}{
   Optional inputs for \code{eegtime} function.
 }
@@ -46,7 +49,7 @@ Produces plot of EEG time course with \code{NULL} return value.
 \references{
   Bache, K. & Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 
-  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. 
+  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. http://www.downstate.edu/hbnl/
   
   Harrell, F., Dupont, C., and Others. \emph{Hmisc: Harrell Miscellaneous}. http://CRAN.R-project.org/package=Hmisc
   
@@ -67,22 +70,25 @@ P4   P5   P6   P7   P8   P9   P10  PO1  PO2  PO3  PO4  PO5  PO6  PO7  PO8
 PO9  PO10 POZ  PZ   T7   T8   T9   T10  TP7  TP8  TP9  TP10
 
 Subplots are created using \code{eegtime}, so input \code{...} can be any optional input for \code{eegtime}.
+
+Inspired by Frank Harrell's subplot function (in Hmisc package).
 }
 
 \examples{
 ##########   EXAMPLE   ##########
 
-# get control ("c") data from "eegdata" data
-data(eegdata)
-idx=which(eegdata$group=="c")
-eegdata=eegdata[idx,]
+# # get control ("c") data from "eegdata" data
+# data(eegdata)
+# idx <- which(eegdata$group=="c")
+# eegdata <- eegdata[idx,]
 
-# get average 
-eegmean=tapply(eegdata$voltage,list(eegdata$time,eegdata$channel),mean)
+# # get average 
+# eegmean <- tapply(eegdata$voltage,list(eegdata$time,eegdata$channel),mean)
+# eegse <- tapply(eegdata$voltage,list(eegdata$time,eegdata$channel),sd)/sqrt(50)
 
-# plot time course for all electrodes
-#x11(height=15,width=15)
-tseq=(0:255)*1000/255
-eegtimemc(tseq,eegmean,colnames(eegmean),ylim=c(-11,14))
+# # plot time course for all electrodes
+# quartz(height=15,width=15)
+# tseq <- seq(0,1000,length.out=256)
+# eegtimemc(tseq,eegmean,colnames(eegmean),ylim=c(-11,14),voltSE=eegse)
 
 }

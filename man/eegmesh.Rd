@@ -30,10 +30,10 @@ Nathaniel E. Helwig <helwig@umn.edu>
 \examples{
 ##########   EXAMPLE   ##########
 
-data(eegmesh)
-wire3d(eegmesh)
-eegmesh$material$color=rep("red",length(eegmesh$material$color))
-shade3d(eegmesh)
+# data(eegmesh)
+# wire3d(eegmesh)
+# eegmesh$material$color <- rep("red",length(eegmesh$material$color))
+# shade3d(eegmesh)
 
 }
 \keyword{datasets}

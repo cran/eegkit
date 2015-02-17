@@ -27,7 +27,7 @@ Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
 
   Bache, K. & Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 
-  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn.
+  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. http://www.downstate.edu/hbnl/
 
   Bell, A.J. & Sejnowski, T.J. (1995). An information-maximization approach to blind separation and blind deconvolution. \emph{Neural Computation, 7}, 1129-1159.
 
@@ -41,7 +41,7 @@ Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
   
   Helwig, N. E. (2013). \emph{Fast and stable smoothing spline analysis of variance models for large samples with applications to electroencephalography data analysis}. Unpublished doctoral dissertation. University of Illinois at Urbana-Champaign.
   
-  Helwig, N.E. (2014). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
+  Helwig, N.E. (2015). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
 
   Helwig, N.E. (2014). \emph{ica: Independent Component Analysis}. http://CRAN.R-project.org/package=ica
 
@@ -61,5 +61,5 @@ Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
 }
 \keyword{ package }
 \examples{
-# See examples for eegcap, eegcapdense, eegica, eegsim, eegsmooth, eegspace, eegtime, and eegtimemc
+# See eegcap, eegcapdense, eegica, eegsim, eegsmooth, eegspace, eegtime, and eegtimemc
 }

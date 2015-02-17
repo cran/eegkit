@@ -1,7 +1,9 @@
 voltcol <-
-  function(z,zmin=min(z),zmax=max(z),col=NULL,ncolor=100){
+  function(z,zmin=min(z),zmax=max(z),col=NULL,ncolor=25){
     if(is.null(col[1])){
-      col=rev(rainbow(ncolor,end=3/4))
-    } else {col=colorRampPalette(col)(ncolor)}
-    col[as.integer(1+pmax(0,pmin(floor(ncolor*((z-zmin)/(zmax-zmin))),ncolor-1L)))]
+      col <- colorRampPalette(c("blueviolet","blue","cyan","green","yellow","orange","red"))(ncolor)
+    } else {
+      col <- colorRampPalette(col)(ncolor)
+    }
+    col[.bincode(z,seq(zmin,zmax,length.out=(ncolor+1L)),right=TRUE,include.lowest=TRUE)]
   }

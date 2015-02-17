@@ -7,8 +7,8 @@ Plots Single-Channel EEG Time Course
 Creates plot of single-channel electroencephalography (EEG) time course with optional confidence interval. User can control the plot orientation, line types, line colors, etc.
 }
 \usage{
-eegtime(time,voltage,flipvoltage=TRUE,vlty=1,vlwd=2,vcol="black",
-        voltageSE=NULL,slty=3,slwd=1,scol="black",conflevel=0.95,
+eegtime(time,voltage,flipvoltage=TRUE,vlty=1,vlwd=2,vcol="blue",
+        voltageSE=NULL,slty=NA,slwd=1,scol="cyan",salpha=0.65,conflevel=0.95,
         plotzero=TRUE,zlty=1,zlwd=0.5,zcol="black",xlim=NULL,ylim=NULL,
         xlab=NULL,ylab=NULL,nxtick=6,nytick=6,add=FALSE,...)
 }
@@ -35,13 +35,16 @@ Line color for \code{voltage}.
 Vector of standard errors of EEG voltage at each point in \code{time}.
 }
   \item{slty}{
-Line type for \code{voltageSE}.
+Line type for \code{voltageSE}. If \code{slty=NA} (default) shaded polygons are plotted.
 }
   \item{slwd}{
-Line width for \code{voltageSE}.
+Line width for \code{voltageSE}. Ignored if \code{slty=NA}.
 }
   \item{scol}{
-Line color for \code{voltageSE}.
+Polygon or line color for \code{voltageSE}.
+}
+   \item{salpha}{
+Transparency value for \code{voltageSE} polygon (only used if \code{slty=NA}).
 }
   \item{conflevel}{
 Confidence level to use for confidence intervals. Default forms 95\% CI.   
@@ -90,7 +93,7 @@ Produces plot of EEG time course with \code{NULL} return value.
 \references{
   Bache, K. & Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
 
-  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. 
+  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. http://www.downstate.edu/hbnl/
   
   Ingber, L. (1997). Statistical mechanics of neocortical interactions: Canonical momenta indicatros of electroencephalography. \emph{Physical Review E, 55}, 4578-4593.
   
@@ -108,19 +111,17 @@ Confidence intervals are formed using the normal (Gaussian) distribution.
 
 # get "PZ" electrode from "eegdata" data
 data(eegdata)
-idx=which(eegdata$channel=="PZ")
-eegdata=eegdata[idx,]
+idx <- which(eegdata$channel=="PZ")
+eegdata <- eegdata[idx,]
 
 # get average and standard error (note se=sd/sqrt(n))
-eegmean=tapply(eegdata$voltage,list(eegdata$time,eegdata$group),mean)
-eegse=tapply(eegdata$voltage,list(eegdata$time,eegdata$group),sd)/sqrt(50) 
+eegmean <- tapply(eegdata$voltage,list(eegdata$time,eegdata$group),mean)
+eegse <- tapply(eegdata$voltage,list(eegdata$time,eegdata$group),sd)/sqrt(50) 
 
 # plot results with legend
-tseq=(0:255)*1000/255
-eegtime(tseq,eegmean[,2],vcol="blue",voltageSE=eegse[,2],
-        scol="blue",ylim=c(-10,6),main="Pz")
-eegtime(tseq,eegmean[,1],vlty=2,vcol="red",voltageSE=eegse[,1],
-        scol="red",add=TRUE)
+tseq <- seq(0,1000,length.out=256)
+eegtime(tseq,eegmean[,2],voltageSE=eegse[,2],ylim=c(-10,6),main="Pz")
+eegtime(tseq,eegmean[,1],vlty=2,vcol="red",voltageSE=eegse[,1],scol="pink",add=TRUE)
 legend("bottomright",c("controls","alcoholics"),lty=c(1,2),
        lwd=c(2,2),col=c("blue","red"),bty="n")
 

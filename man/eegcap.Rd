@@ -10,7 +10,8 @@ Creates two- or three-dimensional plot of electroencephalography (EEG) cap with 
 eegcap(electrodes="10-10",type=c("3d","2d"),plotlabels=TRUE,
        plotaxes=FALSE,main="",xyzlab=NULL,cex.point=NULL,
        col.point=NULL,cex.label=NULL,col.label=NULL,nose=TRUE,
-       ears=TRUE,head=TRUE,col.head="AntiqueWhite",index=FALSE,...)
+       ears=TRUE,head=TRUE,col.head="AntiqueWhite",index=FALSE,
+       plt=c(0.03,0.97,0.03,0.97),...)
 }
 \arguments{
   \item{electrodes}{
@@ -58,6 +59,9 @@ Color for dummy head in 3d plot. Ignored if \code{type="2d"}.
   \item{index}{
 Logical indicating if the cap row indices should be returned (see Note).
 }
+  \item{plt}{
+A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region as fractions of the current figure region. See \code{\link{par}}.
+}
   \item{...}{
   Optional inputs for \code{plot} or \code{plot3d} function.
 }
@@ -94,27 +98,20 @@ To save three-dimensional plots, use the \code{\link[rgl]{rgl.postscript}} funct
 
 # plot 10-10 system (default):
 
-# plot full cap 3d (default options)
-eegcap()
+# plot full cap 3d (NOT RUN)
+# eegcap()
 
 # plot full cap 2d (default options)
 eegcap(type="2d")
 
-# plot full cap 3d (different color for ears and nose)
-data(eegcoord)
-mycols=rep("black",87)
-mycols[rownames(eegcoord)=="A1"]="green"
-mycols[rownames(eegcoord)=="A2"]="light blue"
-mycols[rownames(eegcoord)=="NZ"]="pink"
-eegcap(col.point=mycols)
-
 # plot full cap 2d (different color for ears and nose)
-mycols=rep("white",87)
-mycols[rownames(eegcoord)=="A1"]="green"
-mycols[rownames(eegcoord)=="A2"]="light blue"
-mycols[rownames(eegcoord)=="NZ"]="pink"
+data(eegcoord)
+mycols <- rep("white",87)
+enames <- rownames(eegcoord)
+mycols[enames=="A1"] <- "green"
+mycols[enames=="A2"] <- "light blue"
+mycols[enames=="NZ"] <- "pink"
 eegcap(type="2d",col.point=mycols)
-
 
 
 
@@ -122,11 +119,11 @@ eegcap(type="2d",col.point=mycols)
 
 # plot 10-20 system:
 
-# plot 3d cap with labels
-eegcap(electrodes="10-20")
+# plot 3d cap with labels (NOT RUN)
+# eegcap(electrodes="10-20")
 
-# plot 3d cap without labels
-eegcap("10-20",plotlabels=FALSE)
+# plot 3d cap without labels (NOT RUN)
+# eegcap("10-20",plotlabels=FALSE)
 
 # plot 2d cap with labels
 eegcap("10-20","2d")
@@ -139,9 +136,9 @@ eegcap("10-20","2d",plotlabels=FALSE)
 ##########   EXAMPLE 3   ##########
 
 # plot custom subset of electrodes
-myelectrodes=c("FP1","FP2","FPZ","F7","F3","FZ",
-               "F4","F8","T7","C3","CZ","C4","T8",
-               "P7","P3","PZ","P4","P8","O1","O2")
+myelectrodes <- c("FP1","FP2","FPZ","F7","F3","FZ",
+                  "F4","F8","T7","C3","CZ","C4","T8",
+                  "P7","P3","PZ","P4","P8","O1","O2")
 eegcap(myelectrodes,"2d")
 
 }

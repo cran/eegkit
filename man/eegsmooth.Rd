@@ -40,17 +40,17 @@ Random seed to use for knot selection. Set \code{rseed=NULL} to obtain different
 }
 }
 \value{
-For temporal smoothing only: an object of class "css" (see \code{\link[bigsplines]{bigspline}}).
+For temporal smoothing only: an object of class "bigspline" (see \code{\link[bigsplines]{bigspline}}).
 
-For spatial smoothing only: an object of class "tps" (see \code{\link[bigsplines]{bigtps}}).
+For spatial smoothing only: an object of class "bigtps" (see \code{\link[bigsplines]{bigtps}}).
 
-For spatial-temporal smoothing: an object of class "ssa" (see \code{\link[bigsplines]{bigssa}}).
+For spatial-temporal smoothing: an object of class "bigssa" (see \code{\link[bigsplines]{bigssa}}).
 
 }
 \references{
   Helwig, N. E. (2013). \emph{Fast and stable smoothing spline analysis of variance models for large samples with applications to electroencephalography data analysis}. Unpublished doctoral dissertation. University of Illinois at Urbana-Champaign.
   
-  Helwig, N.E. (2014). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
+  Helwig, N.E. (2015). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
   
   Helwig, N. E. and Ma, P. (in prep). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. 
   
@@ -75,19 +75,18 @@ Setting \code{rparm=NA} will use the full data solution; this is more computatio
 
 # get "PZ" electrode of "c" subjects in "eegdata" data
 data(eegdata)
-idx=which(eegdata$channel=="PZ" & eegdata$group=="c")
-eegdata=eegdata[idx,]
+idx <- which(eegdata$channel=="PZ" & eegdata$group=="c")
+eegdata <- eegdata[idx,]
 
 # temporal smoothing
-eegmod=eegsmooth(eegdata$voltage,time=eegdata$time)
+eegmod <- eegsmooth(eegdata$voltage,time=eegdata$time)
 
 # define data for prediction
-time=seq(min(eegdata$time),max(eegdata$time),length.out=100)
-yhat=predict(eegmod,newdata=time,se.fit=TRUE)
+time <- seq(min(eegdata$time),max(eegdata$time),length.out=100)
+yhat <- predict(eegmod,newdata=time,se.fit=TRUE)
 
 # plot results using eegtime
-eegtime(time,yhat[[1]],vcol="blue",voltageSE=yhat[[2]],
-        scol="blue",ylim=c(-4,4),main="Pz")
+eegtime(time*1000/255,yhat$fit,voltageSE=yhat$se.fit,ylim=c(-4,4),main="Pz")
 
 
 
@@ -95,27 +94,31 @@ eegtime(time,yhat[[1]],vcol="blue",voltageSE=yhat[[2]],
 
 # get time point 65 (approx 250 ms) of "c" subjects in "eegdata" data
 data(eegdata)
-idx=which(eegdata$time==65L & eegdata$group=="c")
-eegdata=eegdata[idx,]
+idx <- which(eegdata$time==65L & eegdata$group=="c")
+eegdata <- eegdata[idx,]
 
-# remove ears and nose
-idx=c(which(eegdata$channel=="X"),which(eegdata$channel=="Y"),which(eegdata$channel=="nd"))
-eegdata=eegdata[-idx,]
+# remove ears, nose, and reference (Cz)
+idx <- c(which(eegdata$channel=="X"),which(eegdata$channel=="Y"),
+         which(eegdata$channel=="nd"),which(eegdata$channel=="Cz"))
+eegdata <- eegdata[-idx,]
 
 # match to eeg coordinates
 data(eegcoord)
-cidx=match(eegdata$channel,rownames(eegcoord))
+cidx <- match(eegdata$channel,rownames(eegcoord))
 
 # spatial smoothing
-eegmod=eegsmooth(eegdata$voltage,space=eegcoord[cidx,1:3])
+eegmod <- eegsmooth(eegdata$voltage,space=eegcoord[cidx,1:3])
 
 # use dense cap for prediction
+mycap <- levels(factor(eegdata$channel))
+ix <- eegcapdense(mycap,type="2d",index=TRUE)
 data(eegdense)
-space=eegdense[,1:3]
-yhat=predict(eegmod,newdata=space)
+space <- eegdense[ix,1:3]
+yhat <- predict(eegmod,newdata=space)
 
 # plot results using eegspace
-eegspace(space,yhat)
+#eegspace(space,yhat)
+eegspace(eegdense[ix,4:5],yhat)
 
 
 
@@ -123,42 +126,42 @@ eegspace(space,yhat)
 
 # # get "c" subjects of "eegdata" data
 # data(eegdata)
-# idx=which(eegdata$group=="c")
-# eegdata=eegdata[idx,]
+# idx <- which(eegdata$group=="c")
+# eegdata <- eegdata[idx,]
 
-# # remove ears and nose
-# idx=c(which(eegdata$channel=="X"),which(eegdata$channel=="Y"),which(eegdata$channel=="nd"))
-# eegdata=eegdata[-idx,]
+# # remove ears, nose, and reference (Cz)
+# idx <- c(which(eegdata$channel=="X"),which(eegdata$channel=="Y"),
+#          which(eegdata$channel=="nd"),which(eegdata$channel=="Cz"))
+# eegdata <- eegdata[-idx,]
 
 # # match to eeg coordinates
 # data(eegcoord)
-# cidx=match(eegdata$channel,rownames(eegcoord))
+# cidx <- match(eegdata$channel,rownames(eegcoord))
 
 # # spatial-temporal smoothing
-# eegmod=eegsmooth(eegdata$voltage,space=eegcoord[cidx,1:3],time=eegdata$time)
+# eegmod <- eegsmooth(eegdata$voltage,space=eegcoord[cidx,1:3],time=eegdata$time)
 
 # # time main effect
-# newdata=list(time=seq(min(eegdata$time),max(eegdata$time),length.out=100))
-# yhat=predict(eegmod,newdata=newdata,se.fit=TRUE,include="time")
-# eegtime(newdata$time,yhat[[1]],vcol="blue",voltageSE=yhat[[2]],
-#         scol="blue",ylim=c(-2,4),main="Time Main Effect")
+# newdata <- list(time=seq(min(eegdata$time),max(eegdata$time),length.out=100))
+# yhat <- predict(eegmod,newdata=newdata,se.fit=TRUE,include="time")
+# eegtime(newdata$time,yhat$fit,voltageSE=yhat$se.fit,ylim=c(-2,4),main="Time Main Effect")
 
 # # space main effect
+# mycap <- levels(factor(eegdata$channel))
+# ix <- eegcapdense(mycap,type="2d",index=TRUE)
 # data(eegdense)
-# newdata=list(space=eegdense[,1:3])
-# yhat=predict(eegmod,newdata=newdata,include="space")
+# newdata <- list(space=eegdense[ix,1:3])
+# yhat <- predict(eegmod,newdata=newdata,include="space")
 # eegspace(newdata$space,yhat)
 
 # # interaction effect (spatial map at time point 65)
-# data(eegdense)
-# newdata=list(space=eegdense[,1:3],time=rep(65,nrow(eegdense)))
-# yhat=predict(eegmod,newdata=newdata,include="space:time")
+# newdata <- list(space=eegdense[ix,1:3],time=rep(65,nrow(eegdense[ix,])))
+# yhat <- predict(eegmod,newdata=newdata,include="space:time")
 # eegspace(newdata$space,yhat)
 
 # # full prediction (spatial map at time point 65)
-# newdata=list(space=eegdense[,1:3],time=rep(65,nrow(eegdense)))
-# yhat=predict(eegmod,newdata=newdata)
+# newdata <- list(space=eegdense[ix,1:3],time=rep(65,nrow(eegdense[ix,])))
+# yhat <- predict(eegmod,newdata=newdata)
 # eegspace(newdata$space,yhat)
-
 
 }
