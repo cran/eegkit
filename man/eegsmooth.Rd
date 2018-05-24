@@ -7,8 +7,9 @@ Spatial and/or Temporal Smoothing of EEG Data
 Smooths single- or multi-channel electroencephalography (EEG) with respect to space and/or time. Uses the \code{\link[bigsplines]{bigspline}}, \code{\link[bigsplines]{bigtps}}, and \code{\link[bigsplines]{bigssa}} functions (from \code{bigsplines} package) for smoothing.
 }
 \usage{
-eegsmooth(voltage,space=NULL,time=NULL,nknots=NULL,rparm=NULL,
-          lambdas=NULL,skip.iter=TRUE,se.fit=FALSE,rseed=1234)
+eegsmooth(voltage, space = NULL, time = NULL, nknots = NULL,
+          rparm = NULL, lambdas = NULL, skip.iter = TRUE,
+          se.fit = FALSE, rseed = 1234)
 }
 \arguments{
   \item{voltage}{
@@ -52,9 +53,9 @@ For spatial-temporal smoothing: an object of class "bigssa" (see \code{\link[big
   
   Helwig, N.E. (2015). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
   
-  Helwig, N. E. and Ma, P. (in prep). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. 
+  Helwig, N. E. & Ma, P. (2015). Fast and stable multiple smoothing parameter selection in smoothing spline analysis of variance models with large samples. \emph{Journal of Computational and Graphical Statistics, 24}(3), 715-732.
   
-  Helwig, N. E. and Ma, P. (in press). Fast and stable multiple smoothing parameter selection in smoothing spline analysis of variance models with large samples. \emph{Journal of Computational and Graphical Statistics}.
+  Helwig, N. E. & Ma, P. (2016). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. \emph{Statistics and Its Interface, 9}(4), 433-444.
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

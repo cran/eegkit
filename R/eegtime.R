@@ -1,11 +1,13 @@
 eegtime <- 
-  function(time,voltage,flipvoltage=TRUE,vlty=1,vlwd=2,vcol="blue",
-           voltageSE=NULL,slty=NA,slwd=1,scol="cyan",salpha=0.65,conflevel=0.95,
-           plotzero=TRUE,zlty=1,zlwd=0.5,zcol="black",xlim=NULL,ylim=NULL,
-           xlab=NULL,ylab=NULL,nxtick=6,nytick=6,add=FALSE,...){
+  function(time, voltage, flipvoltage = TRUE, vlty = 1, vlwd = 2,
+           vcol = "blue", voltageSE = NULL, slty = NA, slwd = 1,
+           scol = "cyan", salpha = 0.65, conflevel = 0.95,
+           plotzero = TRUE, zlty = 1, zlwd = 0.5, zcol = "black",
+           xlim = NULL, ylim = NULL, xlab = NULL, ylab = NULL,
+           nxtick = 6, nytick = 6, add = FALSE, ...){
     ###### Plots Single-Channel EEG Time Course
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: February 16, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     vlen <- length(voltage)

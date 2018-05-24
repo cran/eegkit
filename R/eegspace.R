@@ -1,12 +1,13 @@
 eegspace <- 
-  function(space,voltage,vlim=NULL,mycolors=NULL,ncolor=25,
-           colorbar=TRUE,nctick=5,rtick=1,cex.axis=1,barloc=NULL,
-           colorlab=NULL,cex.lab=1,plotaxes=FALSE,main="",
-           xyzlab=NULL,cex.point=1,cex.main=1,nose=TRUE,ears=TRUE,
-           head=TRUE,col.head="AntiqueWhite",mar=NULL,...){
+  function(space, voltage, vlim = NULL, mycolors = NULL, ncolor = 25,
+           colorbar = TRUE, nctick = 5, rtick = 1, cex.axis = 1,
+           barloc = NULL, colorlab = NULL, colorlabline = 3, cex.lab = 1,
+           plotaxes = FALSE, main = "", xyzlab = NULL, cex.point = 1,
+           cex.main = 1, nose = TRUE, ears = TRUE, head = TRUE,
+           col.head = "AntiqueWhite", mar = NULL, ...){
     ###### Plots EEG Spatial Map
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: February 16, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     vlen <- length(voltage)
@@ -40,7 +41,8 @@ eegspace <-
     
     ### map voltages to colors
     if(is.null(mycolors[1])){
-      mycolors <- colorRampPalette(c("blueviolet","blue","cyan","green","yellow","orange","red"))(ncolor)
+      #mycolors <- colorRampPalette(c("blueviolet","blue","cyan","green","yellow","orange","red"))(ncolor)
+      mycolors <- colorRampPalette(c("darkblue", rainbow(12)[c(9,8,7,5,3,2,1)], "darkred"))(ncolor)
     } else {
       mycolors <- colorRampPalette(mycolors)(ncolor)
     }
@@ -104,7 +106,7 @@ eegspace <-
         nctick <- length(ticklab)
         tickloc <- seq(-12.5,12.5,length.out=nctick)
         axis(aidx,cex.axis=cex.axis,at=tickloc,labels=as.character(ticklab))
-        mtext(colorlab,side=aidx,line=3,cex=cex.lab*par()$cex)
+        mtext(colorlab,side=aidx,line=colorlabline,cex=cex.lab*par()$cex)
         
         # draw colorbars
         scales <- ncolor/25

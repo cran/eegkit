@@ -7,7 +7,7 @@ Simulate Event-Related Potential EEG Data
 Simulates event-related potential EEG data from hypothetical visual-stimulus ERP study. Data are simulated using a linear combination of five spatiotemporal component functions: P100, N100, P200, N200, and P300 components. User can control the coefficient (weight) given to each component, as well as the time shift (delay) of each component.
 }
 \usage{
-eegsim(channel,time,coefs=rep(1,5),tshift=rep(0,5))
+eegsim(channel, time, coefs = rep(1,5), tshift = rep(0,5))
 }
 \arguments{
   \item{channel}{

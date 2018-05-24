@@ -2,7 +2,7 @@
 \alias{eegdense}
 \docType{data}
 \title{
-Dense EEG Cap Coordinates (3d and 2d Projection)
+Dense EEG Cap Coordinates
 }
 \description{
 Dense (hypothetical) three-dimensional electroencephalography (EEG) electrode coordinates, and corresponding projection onto two-dimensional plane. Dense cap spans the 84 scalp electrodes defined in \code{\link{eegcoord}}.

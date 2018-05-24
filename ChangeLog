@@ -1,3 +1,25 @@
+Changes from ver 1.0-2 to ver 1.0-3     [May-24-2018]
+   1) eegkit-package
+	*   Package file is now update-to-date with Description file
+	*   Updated references and improvements to several functions
+	*   Added two new functions: eegfft and eegresample
+   2) eegcap
+	*   2d plot is new default
+   3) eegcapdense
+	*   2d plot is new default
+   4) eegfft
+	*   New function: Fast Fourier Transform of EEG data
+	*   Returns strength (amplitude) and delay (phase)
+   5) eegresample
+	*   New function: Changes Sampling Rate of EEG data
+	*   Turns a signal of length N into a signal of length n
+   6) eegspace
+	*   Improved color scheme for colorbar
+        *   Old: c("blueviolet","blue","cyan","green","yellow","orange","red")
+        *   New: c("darkblue", rainbow(12)[c(9,8,7,5,3,2,1)], "darkred")
+
+
+
 Changes from ver 1.0-1 to ver 1.0-2     [Feb-17-2015]
    1) eegkit-package
 	*   Improvements/updates to all functions

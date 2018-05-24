@@ -1,9 +1,10 @@
 eegica <-
-  function(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc),
-           type=c("time","space"),method=c("imax","fast","jade"),...){
+  function(X, nc, center = TRUE, maxit = 100, tol = 1e-6,
+           Rmat = diag(nc), type = c("time", "space"),
+           method = c("imax", "fast", "jade"), ...){
     ###### Independent Component Analysis for EEG data
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: February 16, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     X <- as.matrix(X)

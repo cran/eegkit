@@ -7,10 +7,12 @@ Plots Single-Channel EEG Time Course
 Creates plot of single-channel electroencephalography (EEG) time course with optional confidence interval. User can control the plot orientation, line types, line colors, etc.
 }
 \usage{
-eegtime(time,voltage,flipvoltage=TRUE,vlty=1,vlwd=2,vcol="blue",
-        voltageSE=NULL,slty=NA,slwd=1,scol="cyan",salpha=0.65,conflevel=0.95,
-        plotzero=TRUE,zlty=1,zlwd=0.5,zcol="black",xlim=NULL,ylim=NULL,
-        xlab=NULL,ylab=NULL,nxtick=6,nytick=6,add=FALSE,...)
+eegtime(time, voltage, flipvoltage = TRUE, vlty = 1, vlwd = 2,
+        vcol = "blue", voltageSE = NULL, slty = NA, slwd = 1,
+        scol = "cyan", salpha = 0.65, conflevel = 0.95,
+        plotzero = TRUE, zlty = 1, zlwd = 0.5, zcol = "black",
+        xlim = NULL, ylim = NULL, xlab = NULL, ylab = NULL,
+        nxtick = 6, nytick = 6, add = FALSE, ...)
 }
 \arguments{
   \item{time}{

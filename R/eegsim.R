@@ -1,8 +1,8 @@
 eegsim <-
-  function(channel,time,coefs=rep(1,5),tshift=rep(0,5)){
+  function(channel, time, coefs = rep(1,5), tshift = rep(0,5)){
     ###### Simulate event-related potential EEG data
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: February 16, 2015
+    ###### Last modified: May 23, 2018
     
     if(length(time)!=length(channel)){stop("Inputs channel and time should be same length.")}
     if(length(coefs)!=5L){stop("Incorrect number of input coefficients.")}

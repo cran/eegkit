@@ -1,4 +1,4 @@
-# ###############   Trim EEG Head & Creat Cap Mesh   ###############
+# ###############   Trim EEG Head & Create Cap Mesh   ###############
 # 
 # ######**###### Trim Head Vertices to Cap ######**######
 # 
@@ -164,7 +164,7 @@
 # 
 # 
 # ### save results
-# save(eegdense,file="/Users/Nate/Documents/R/My_R_Code/eegkit/CRAN/CRAN_ver1.0-0/eegkit/data/eegdense.rda")
-# save(eegmesh,file="/Users/Nate/Documents/R/My_R_Code/eegkit/CRAN/CRAN_ver1.0-0/eegkit/data/eegmesh.rda")
+# save(eegdense,file="~Downloads/eegkit/CRAN/CRAN_ver1.0-0/eegkit/data/eegdense.rda")
+# save(eegmesh,file="~Downloads/eegkit/CRAN/CRAN_ver1.0-0/eegkit/data/eegmesh.rda")
 # 
 # 

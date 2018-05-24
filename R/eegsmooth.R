@@ -1,9 +1,10 @@
 eegsmooth <- 
-  function(voltage,space=NULL,time=NULL,nknots=NULL,rparm=NULL,
-           lambdas=NULL,skip.iter=TRUE,se.fit=FALSE,rseed=1234){
+  function(voltage, space = NULL, time = NULL, nknots = NULL,
+           rparm = NULL, lambdas = NULL, skip.iter = TRUE,
+           se.fit = FALSE, rseed = 1234){
     ###### Spatial and/or temporal smoothing of EEG data
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: February 16, 2015
+    ###### Last modified: Mat 23, 2018
     
     ### check voltage
     voltage <- as.matrix(voltage)

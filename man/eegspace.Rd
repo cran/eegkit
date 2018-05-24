@@ -7,11 +7,12 @@ Plots Multi-Channel EEG Spatial Map
 Creates plot of multi-channel electroencephalography (EEG) spatial map. User can control the plot type (2d or 3d), the colormap, color, etc.
 }
 \usage{
-eegspace(space,voltage,vlim=NULL,mycolors=NULL,ncolor=25,
-         colorbar=TRUE,nctick=5,rtick=1,cex.axis=1,barloc=NULL,
-         colorlab=NULL,cex.lab=1,plotaxes=FALSE,main="",
-         xyzlab=NULL,cex.point=1,cex.main=1,nose=TRUE,ears=TRUE,
-         head=TRUE,col.head="AntiqueWhite",mar=NULL,...)
+eegspace(space, voltage, vlim = NULL, mycolors = NULL, ncolor = 25,
+         colorbar = TRUE, nctick = 5, rtick = 1, cex.axis = 1,
+         barloc = NULL, colorlab = NULL, colorlabline = 3, cex.lab = 1,
+         plotaxes = FALSE, main = "", xyzlab = NULL, cex.point = 1,
+         cex.main = 1, nose = TRUE, ears = TRUE, head = TRUE,
+         col.head = "AntiqueWhite", mar = NULL, ...)
 }
 \arguments{
   \item{space}{
@@ -47,6 +48,10 @@ Character vector giving location of color bar. See Notes.
   \item{colorlab}{
 Character vector giving label for color bar. Ignored if \code{colorbar=FALSE}.
 }
+  \item{colorlabline}{
+Line number for color bar label (for input to \code{\link{mtext}}).  
+}
+
   \item{cex.lab}{
 Cex of axis labels for colorbar. Ignored if \code{colorbar=FALSE}.
 }

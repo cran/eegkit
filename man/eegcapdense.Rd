@@ -1,17 +1,18 @@
 \name{eegcapdense}
 \alias{eegcapdense}
 \title{
-Draws Dense EEG Cap with Selected Electrodes (3d or 2d)
+Draws Dense EEG Cap with Selected Electrodes
 }
 \description{
 Creates two- or three-dimensional plot of dense electroencephalography (EEG) cap that spans user-input electrodes. Three-dimensional plots are created using the \code{\link{eegdense}} data and the \code{\link[rgl]{plot3d}} function (from \code{rgl} package). Currently supports 933 scalp electrodes. Includes customization options (e.g., each electrode can have a unique plotting color, size, label color, etc.).
 }
 \usage{
-eegcapdense(electrodes="10-10",type=c("3d","2d"),plotlabels=TRUE,
-            plotaxes=FALSE,main="",xyzlab=NULL,cex.point=NULL,
-            col.point=NULL,cex.label=NULL,col.label=NULL,
-            nose=TRUE,ears=TRUE,head=TRUE,col.head="AntiqueWhite",
-            index=FALSE,zconst=0.5,plt=c(0.03,0.97,0.03,0.97),...)
+eegcapdense(electrodes = "10-10", type = c("2d", "3d"),
+            plotlabels = TRUE, plotaxes = FALSE, main = "",
+            xyzlab = NULL, cex.point = NULL, col.point = NULL,
+            cex.label = NULL, col.label = NULL, nose = TRUE,
+            ears = TRUE, head = TRUE, col.head = "AntiqueWhite",
+            index = FALSE, zconst = 0.5, plt = c(0.03,0.97,0.03,0.97), ...)
 }
 \arguments{
   \item{electrodes}{
@@ -100,24 +101,14 @@ To save three-dimensional plots, use the \code{\link[rgl]{rgl.postscript}} funct
 ##########   EXAMPLE 1   ##########
 
 # plot 10-10 system (default):
-
-# plot full cap 3d (NOT RUN)
-# eegcapdense()
-
-# plot full cap 2d (default options)
-eegcapdense(type="2d")
+eegcapdense()
 
 
 
 ##########   EXAMPLE 2   ##########
 
 # plot 10-20 system:
-
-# plot 3d cap with labels (NOT RUN)
-# eegcapdense(electrodes="10-20")
-
-# plot 2d cap without labels
-eegcapdense("10-20","2d",plotlabels=FALSE)
+eegcapdense("10-20", plotlabels = FALSE)
 
 
 
@@ -127,6 +118,6 @@ eegcapdense("10-20","2d",plotlabels=FALSE)
 myelectrodes <- c("FP1","FP2","FPZ","F7","F3","FZ",
                   "F4","F8","T7","C3","CZ","C4","T8",
                   "P7","P3","PZ","P4","P8","O1","O2")
-eegcapdense(myelectrodes,"2d")
+eegcapdense(myelectrodes)
 
 }

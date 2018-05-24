@@ -1,3 +1,11 @@
 exportPattern("^[[:alpha:]]+")
 
 import(bigsplines,eegkitdata,ica,rgl)
+
+importFrom("grDevices", "col2rgb", "colorRampPalette", "rainbow", "rgb")
+
+importFrom("graphics", "axis", "lines", "mtext", "par", "plot",
+           "points", "polygon", "rect", "text", "title")
+
+importFrom("stats", "fft", "mvfft", "qnorm")
+importFrom("utils", "data")

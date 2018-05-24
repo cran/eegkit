@@ -7,8 +7,10 @@ Plots Multi-Channel EEG Time Course
 Creates plot of multi-channel electroencephalography (EEG) time courses with subplots positioned according to electrode locations. User can control the plot orientation, line types, line colors, etc.
 }
 \usage{
-eegtimemc(time,voltmat,channel,size=c(0.75,0.75),
-          vadj=0.5,hadj=0.5,xlab="",ylab="",voltSE=NULL,...)
+eegtimemc(time, voltmat, channel, size = c(0.75,0.75),
+          vadj = 0.5, hadj = 0.5, xlab = "", ylab = "",
+          voltSE = NULL, vlty = 1, slty = NA, vlwd = 1,
+          slwd = 1, vcol = "blue", scol = "cyan", ...)
 }
 \arguments{
   \item{time}{
@@ -37,6 +39,24 @@ Y-axis label for each subplot.
 }
   \item{voltSE}{
 Matrix of voltage standard errors (same size as \code{voltmat}).
+}
+  \item{vlty}{
+Line type for \code{voltmat}.
+}
+  \item{slty}{
+Line type for \code{voltSE}. If \code{slty=NA} (default) shaded polygons are plotted.
+}
+  \item{vlwd}{
+Line width for \code{voltmat}.
+}
+  \item{slwd}{
+Line width for \code{voltSE}. Ignored if \code{slty=NA}.
+}
+  \item{vcol}{
+Line color for \code{voltmat}.
+}
+  \item{scol}{
+Polygon or line color for \code{voltSE}.
 }
   \item{...}{
   Optional inputs for \code{eegtime} function.
@@ -87,7 +107,7 @@ Inspired by Frank Harrell's subplot function (in Hmisc package).
 # eegse <- tapply(eegdata$voltage,list(eegdata$time,eegdata$channel),sd)/sqrt(50)
 
 # # plot time course for all electrodes
-# quartz(height=15,width=15)
+# dev.new(height=15,width=15, noRStudioGD = TRUE)
 # tseq <- seq(0,1000,length.out=256)
 # eegtimemc(tseq,eegmean,colnames(eegmean),ylim=c(-11,14),voltSE=eegse)
 

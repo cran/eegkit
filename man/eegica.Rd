@@ -7,8 +7,9 @@ Independent Component Analysis of EEG Data
 Computes temporal (default) or spatial ICA decomposition of EEG data. Can use Infomax (default), FastICA, or JADE algorithm. ICA computations are conducted via \code{\link[ica]{icaimax}}, \code{\link[ica]{icafast}}, or \code{\link[ica]{icajade}} from the \code{ica} package.
 }
 \usage{
-eegica(X,nc,center=TRUE,maxit=100,tol=1e-6,Rmat=diag(nc),
-       type=c("time","space"),method=c("imax","fast","jade"),...)
+eegica(X, nc, center = TRUE, maxit = 100, tol = 1e-6,
+       Rmat = diag(nc), type = c("time", "space"),
+       method = c("imax", "fast", "jade"), ...)
 }
 \arguments{
   \item{X}{
@@ -58,9 +59,7 @@ Cardoso, J.F., & Souloumiac, A. (1993). Blind beamforming for non-Gaussian signa
   
 Cardoso, J.F., & Souloumiac, A. (1996). Jacobi angles for simultaneous diagonalization. \emph{SIAM Journal on Matrix Analysis and Applications, 17}, 161-164.
 
-Helwig, N.E. (in prep). On the relationship between FastICA and Infomax: Fast and robust fixed point algorithms for information-maximization.
-
-Helwig, N.E. (2014). \emph{ica: Independent Component Analysis}. http://CRAN.R-project.org/package=ica
+Helwig, N.E. (2018). \emph{ica: Independent Component Analysis}. http://CRAN.R-project.org/package=ica
 
 Helwig, N.E. & Hong, S. (2013). A critique of Tensor Probabilistic Independent Component Analysis: Implications and recommendations for multi-subject fMRI data analysis. \emph{Journal of Neuroscience Methods, 213}, 263-273.
 
@@ -71,10 +70,10 @@ Nathaniel E. Helwig <helwig@umn.edu>
 }
 \details{
 \bold{ICA Model}
-The ICA model can be written as \code{X=tcrossprod(S,M)+E}, where columns of \code{S} contain the source signals, \code{M} is the mixing matrix, and columns of \code{E} contain the noise signals. Columns of \code{X} are assumed to have zero mean. The goal is to find the unmixing matrix \code{W} such that columns of \code{S=tcrossprod(X,W)} are independent as possible.
+The ICA model can be written as \code{X = tcrossprod(S, M) + E}, where columns of \code{S} contain the source signals, \code{M} is the mixing matrix, and columns of \code{E} contain the noise signals. Columns of \code{X} are assumed to have zero mean. The goal is to find the unmixing matrix \code{W} such that columns of \code{S = tcrossprod(X, W)} are independent as possible.
 
 \bold{Whitening}
-Without loss of generality, we can write \code{M=P\%*\%R} where \code{P} is a tall matrix and \code{R} is an orthogonal rotation matrix. Letting \code{Q} denote the pseudoinverse of \code{P}, we can whiten the data using \code{Y=tcrossprod(X,Q)}. The goal is to find the orthongal rotation matrix \code{R} such that the source signal estimates \code{S=Y\%*\%R} are as independent as possible. Note that \code{W=crossprod(R,Q)}.
+Without loss of generality, we can write \code{M = P \%*\% R} where \code{P} is a tall matrix and \code{R} is an orthogonal rotation matrix. Letting \code{Q} denote the pseudoinverse of \code{P}, we can whiten the data using \code{Y = tcrossprod(X,Q)}. The goal is to find the orthongal rotation matrix \code{R} such that the source signal estimates \code{S = Y \%*\% R} are as independent as possible. Note that \code{W = crossprod(R,Q)}.
 
 \bold{Infomax}
 The Infomax approach finds the orthogonal rotation matrix \code{R} that (approximately) maximizes the joint entropy of a nonlinear function of the estimated source signals. See Bell and Sejnowski (1995) and Helwig (in prep) for specifics of algorithms.
@@ -87,7 +86,7 @@ The JADE approach finds the orthogonal rotation matrix \code{R} that (approximat
 }
 
 \note{
-If \code{type="time"}, the data matrix is transposed before calling ICA algorithm (i.e., \code{X=t(X)}), and the columns of the tranposed data matrix are centered.
+If \code{type="time"}, the data matrix is transposed before calling ICA algorithm (i.e., \code{X = t(X)}), and the columns of the tranposed data matrix are centered.
 }
 \examples{
 ##########   EXAMPLE   ##########

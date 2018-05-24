@@ -1,12 +1,13 @@
 eegcapdense <- 
-  function(electrodes="10-10",type=c("3d","2d"),plotlabels=TRUE,
-           plotaxes=FALSE,main="",xyzlab=NULL,cex.point=NULL,
-           col.point=NULL,cex.label=NULL,col.label=NULL,
-           nose=TRUE,ears=TRUE,head=TRUE,col.head="AntiqueWhite",
-           index=FALSE,zconst=0.5,plt=c(0.03,0.97,0.03,0.97),...){
+  function(electrodes = "10-10", type = c("2d", "3d"),
+           plotlabels = TRUE, plotaxes = FALSE, main = "",
+           xyzlab = NULL, cex.point = NULL, col.point = NULL,
+           cex.label = NULL, col.label = NULL, nose = TRUE,
+           ears = TRUE, head = TRUE, col.head = "AntiqueWhite",
+           index = FALSE, zconst = 0.5, plt = c(0.03,0.97,0.03,0.97), ...){
     ###### Plots EEG Cap with Dense Electrodes (2D or 3D)
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: February 16, 2015
+    ###### Last modified: May 23, 2018
     
     ### initial checks
     eegcoord <- NULL
