@@ -12,7 +12,8 @@ eegtime(time, voltage, flipvoltage = TRUE, vlty = 1, vlwd = 2,
         scol = "cyan", salpha = 0.65, conflevel = 0.95,
         plotzero = TRUE, zlty = 1, zlwd = 0.5, zcol = "black",
         xlim = NULL, ylim = NULL, xlab = NULL, ylab = NULL,
-        nxtick = 6, nytick = 6, add = FALSE, ...)
+        nxtick = 6, nytick = 6, xticks = NULL, yticks = NULL,
+        add = FALSE, ...)
 }
 \arguments{
   \item{time}{
@@ -80,6 +81,12 @@ Approximate number of axis ticks for \code{time}.
 }
   \item{nytick}{
 Approximate number of axis ticks \code{voltage}. 
+}
+  \item{xticks}{
+x-axis ticks for \code{time} (overrides \code{nxtick}).  
+}
+  \item{yticks}{
+y-axis ticks \code{voltage} (overrides \code{nytick}). 
 }
   \item{add}{
 If \code{TRUE}, lines are added to current plot; otherwise a new plot is created.  

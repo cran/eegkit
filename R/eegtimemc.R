@@ -5,7 +5,7 @@ eegtimemc <-
            slwd = 1, vcol = "blue", scol = "cyan", ...){
     ###### Plots Multi-Channel EEG Time Courses
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: May 23, 2018
+    ###### Last modified: July 6, 2018
     
     voltmat <- as.array(voltmat)
     vdim <- dim(voltmat)
@@ -34,8 +34,15 @@ eegtimemc <-
     naidx <- which(is.na(cidx))
     if(length(naidx)>0){
       cidx <- cidx[-naidx]
-      channel <- channel[-naidx]
-      voltmat <- voltmat[,-naidx]
+      if(length(vdim) == 3L){
+        channel <- channel[-naidx]
+        voltmat <- voltmat[,-naidx,]
+        if(!is.null(voltSE)) voltSE <- voltSE[,-naidx,]
+      } else {
+        channel <- channel[-naidx]
+        voltmat <- voltmat[,-naidx]
+        if(!is.null(voltSE)) voltSE <- voltSE[,-naidx]
+      }
       vdim[2] <- (vdim[2]-length(naidx))
     }
     eegcoord <- eegcoord[cidx,]

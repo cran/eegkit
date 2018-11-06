@@ -49,9 +49,6 @@ Nathaniel E. Helwig <helwig@umn.edu>
 \note{
 The strength of the signal has the same unit as the input (typically microvolts), and the phase shift is measured in radians (range -\eqn{pi} to \eqn{pi}).
 }
-%\seealso{
-%\code{\link{eegfilter}}
-%}
 \examples{
 
 ##########   EXAMPLE   ##########

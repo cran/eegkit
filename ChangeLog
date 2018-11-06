@@ -1,3 +1,28 @@
+Changes from ver 1.0-3 to ver 1.0-4     [Nov-06-2018]
+   1) eegkit-package
+	*   Three new functions: eegcap2d, eegfilter, eegpsd
+	*   Updates/extensions for eegcap, eegtime, and eegtimemc
+   2) eegcap
+	*   Added col.border argument (to change color of border)
+   3) eegcap2d
+	*   A slightly different implementation of 2d EEG cap plotting
+ 	*   Unlike eegcap, this function does NOT use par$plt
+	*   Often better (than eegcap) for use w/in multi-panel plots
+   4) eegfilter
+	*   New function for filtering EEG data
+	*   Options include low-, high-, or band-pass filters
+	*   Implements Butterworth or FIR filter (from signal package)
+   5) eegpsd
+	*   New function for plotting power spectral density
+ 	*   Produces scatter plot (single channel) or heat map (multi-channel)
+	*   Uses eegfft function to calculate PSD
+   6) eegtime
+	*   Now possible to input x and y tick values
+   7) eegtimemc
+	*   Now possible to plot multiple conditions (or groups) in each plot
+
+
+
 Changes from ver 1.0-2 to ver 1.0-3     [May-24-2018]
    1) eegkit-package
 	*   Package file is now update-to-date with Description file

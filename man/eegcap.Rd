@@ -10,9 +10,10 @@ Creates two- or three-dimensional plot of electroencephalography (EEG) cap with 
 eegcap(electrodes = "10-10", type = c("2d", "3d"),
        plotlabels = TRUE, plotaxes = FALSE, main = "",
        xyzlab = NULL, cex.point = NULL, col.point = NULL,
-       cex.label = NULL, col.label = NULL, nose = TRUE,
-       ears = TRUE, head = TRUE, col.head = "AntiqueWhite",
-       index = FALSE, plt = c(0.03,0.97,0.03,0.97), ...)
+       col.border = NULL, cex.label = NULL, col.label = NULL, 
+       nose = TRUE, ears = TRUE, head = TRUE, 
+       col.head = "AntiqueWhite", index = FALSE, 
+       plt = c(0.03,0.97,0.03,0.97), ...)
 }
 \arguments{
   \item{electrodes}{
@@ -38,6 +39,9 @@ Size of electrode points. Can have a unique size for each electrode.
 }
   \item{col.point}{
 Color of electrode points. Can have a unique color for each electrode.
+}
+  \item{col.border}{
+Color of electrode point borders. Can have a unique color for each electrode.  
 }
   \item{cex.label}{
 Size of electrode labels. Can have a unique size for each electrode label. Input is ignored if \code{plotlabels=FALSE} is used.  

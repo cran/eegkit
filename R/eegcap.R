@@ -2,12 +2,13 @@ eegcap <-
   function(electrodes = "10-10", type = c("2d", "3d"),
            plotlabels = TRUE, plotaxes = FALSE, main = "",
            xyzlab = NULL, cex.point = NULL, col.point = NULL,
-           cex.label = NULL, col.label = NULL, nose = TRUE,
-           ears = TRUE, head = TRUE, col.head = "AntiqueWhite",
-           index = FALSE, plt = c(0.03,0.97,0.03,0.97), ...){
+           col.border = NULL, cex.label = NULL, col.label = NULL, 
+           nose = TRUE, ears = TRUE, head = TRUE, 
+           col.head = "AntiqueWhite", index = FALSE, 
+           plt = c(0.03,0.97,0.03,0.97), ...){
     ###### Plots EEG Cap with Selected Electrodes (2D or 3D)
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: May 23, 2018
+    ###### Last modified: June 22, 2018
     
     ### initial checks
     eegcoord <- NULL
@@ -68,14 +69,15 @@ eegcap <-
         if(is.null(cex.label)){cex.label <- 0.5}
         if(is.null(col.label[1])){col.label <- "blue"}
         if(is.null(col.point[1])){col.point <- "green"}
+        if(is.null(col.border[1])){col.border <- "black"}
         points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,col=col.point,pch=19)
-        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,pch=21)
+        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,col=col.border,pch=21)
         text(eegcoord[eegidx,4],eegcoord[eegidx,5],labels=enames[eegidx],cex=cex.label,col=col.label)
       } else {
         if(is.null(cex.point)){cex.point <- 1}
         if(is.null(col.point[1])){col.point <- "green"}
         points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,col=col.point,pch=19)
-        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,pch=21)
+        points(eegcoord[eegidx,4],eegcoord[eegidx,5],cex=cex.point,col=col.border,pch=21)
       }
       
     } else {

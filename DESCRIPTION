@@ -1,14 +1,14 @@
 Package: eegkit
 Type: Package
 Title: Toolkit for Electroencephalography Data
-Version: 1.0-3
-Date: 2018-05-24
+Version: 1.0-4
+Date: 2018-11-06
 Author: Nathaniel E. Helwig <helwig@umn.edu>
 Maintainer: Nathaniel E. Helwig <helwig@umn.edu>
-Depends: R (>= 2.10), eegkitdata, bigsplines, ica, rgl
-Description: Analysis and visualization tools for electroencephalography (EEG) data. Includes functions for (i) plotting EEG caps, time courses, and spatial maps; (ii) spatial and/or temporal smoothing of EEG data; (iii) frequency domain analysis (FFT) of EEG data (iv) spatial or temporal Independent Component Analysis of EEG data, and (v) simulating event-related potential EEG data.
+Depends: R (>= 2.10), eegkitdata, bigsplines, ica, rgl, signal
+Description: Analysis and visualization tools for electroencephalography (EEG) data. Includes functions for (i) plotting EEG data, (ii) filtering EEG data, (iii) smoothing EEG data; (iv) frequency domain (Fourier) analysis of EEG data, (v) Independent Component Analysis of EEG data, and (vi) simulating event-related potential EEG data.
 License: GPL (>= 2)
 NeedsCompilation: no
-Packaged: 2018-05-24 06:27:36 UTC; Nate
+Packaged: 2018-11-06 06:15:20 UTC; Nate
 Repository: CRAN
-Date/Publication: 2018-05-24 06:44:32 UTC
+Date/Publication: 2018-11-06 07:20:03 UTC

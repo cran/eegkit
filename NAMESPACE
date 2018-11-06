@@ -1,6 +1,6 @@
 exportPattern("^[[:alpha:]]+")
 
-import(bigsplines,eegkitdata,ica,rgl)
+import(bigsplines,eegkitdata,ica,rgl,signal)
 
 importFrom("grDevices", "col2rgb", "colorRampPalette", "rainbow", "rgb")
 

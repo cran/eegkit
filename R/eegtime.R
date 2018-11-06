@@ -4,10 +4,11 @@ eegtime <-
            scol = "cyan", salpha = 0.65, conflevel = 0.95,
            plotzero = TRUE, zlty = 1, zlwd = 0.5, zcol = "black",
            xlim = NULL, ylim = NULL, xlab = NULL, ylab = NULL,
-           nxtick = 6, nytick = 6, add = FALSE, ...){
+           nxtick = 6, nytick = 6, xticks = NULL, yticks = NULL,
+           add = FALSE, ...){
     ###### Plots Single-Channel EEG Time Course
     ###### Nathaniel E. Helwig (helwig@umn.edu)
-    ###### Last modified: May 23, 2018
+    ###### Last modified: July 2, 2018
     
     ### initial checks
     vlen <- length(voltage)
@@ -40,8 +41,8 @@ eegtime <-
     }
     
     ### make x and y tick marks
-    xticks <- pretty(seq(xlim[1],xlim[2],l=nxtick))
-    yticks <- pretty(seq(ylim[1],ylim[2],l=nytick))
+    if(is.null(xticks)) xticks <- pretty(seq(xlim[1],xlim[2],l=nxtick))
+    if(is.null(yticks)) yticks <- pretty(seq(ylim[1],ylim[2],l=nytick))
     
     ### possibly flip voltage and yticks
     if(flipvoltage){
