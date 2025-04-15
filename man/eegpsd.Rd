@@ -4,7 +4,7 @@
 Plots Power Spectral Density of EEG Data
 }
 \description{
-Uses a fast discrete Fourier transform (\code{\link{eegfft}}) to estimate the power spectral density of EEG data, and plots the power esimate using the \code{\link{plot}} (single channel) or \code{\link{imagebar}} (multi-channel) function.
+Uses a fast discrete Fourier transform (\code{\link{eegfft}}) to estimate the power spectral density of EEG data, and plots the power esimate using the \code{\link{plot}} (single channel) or \code{\link[bigsplines]{imagebar}} (multi-channel) function.
 }
 \usage{
 eegpsd(x, Fs, lower, upper, units = "dB", 
@@ -37,7 +37,7 @@ y-axis label for the plot/image.
 z-axis label for the plot/image.
 }
   \item{...}{
-Optional inputs for the \code{\link{plot}} or \code{\link{imagebar}} function.
+Optional inputs for the \code{\link{plot}} or \code{\link[bigsplines]{imagebar}} function.
 }
   
 }

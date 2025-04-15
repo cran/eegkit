@@ -1,3 +1,9 @@
+Changes from ver 1.0-4 to ver 1.0-5     [Apr-15-2025]
+   1) eegkit-package
+	*   Fixed \link{} issues with several Rd files
+	*   Updated references throughout package (e.g., added doi)
+
+
 Changes from ver 1.0-3 to ver 1.0-4     [Nov-06-2018]
    1) eegkit-package
 	*   Three new functions: eegcap2d, eegfilter, eegpsd

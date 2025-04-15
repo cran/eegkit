@@ -29,16 +29,16 @@ Upper band in Hz. Largest frequency to keep.
 Filtering method. Either \code{"butter"} for a Butterworth filter or \code{"fir1"} for a FIR filter.
 }
   \item{order}{
-Order of the filter. See corresponding argument of \code{\link{butter}} or \code{\link{fir1}}.
+Order of the filter. See corresponding argument of \code{\link[signal]{butter}} or \code{\link[signal]{fir1}}.
 }
   \item{forwardreverse}{
-If \code{TRUE} (default), the data are forward and reverse filtered via \code{\link{filtfilt}}. Otherwise the data are (forward) filtered via \code{\link{filter}}.
+If \code{TRUE} (default), the data are forward and reverse filtered via \code{\link[signal]{filtfilt}}. Otherwise the data are (forward) filtered via \code{\link{filter}}.
 }
   \item{scale}{
 If \code{FALSE} (default), the filter is not normalized. Otherwise the magnitude of the center of the first passband is normalized to 1.
 }
   \item{plot}{
-If \code{TRUE}, the filter is plotted via \code{\link{freqz_plot}}.
+If \code{TRUE}, the filter is plotted via \code{\link[signal]{freqz_plot}}.
 }
 }
 \details{
@@ -56,7 +56,7 @@ http://en.wikipedia.org/wiki/Fir_filter
 Nathaniel E. Helwig <helwig@umn.edu>
 }
 \seealso{
-\code{\link{filter}}, \code{\link{filtfilt}}, \code{\link{butter}}, \code{\link{fir1}}
+\code{\link[signal]{filter}}, \code{\link[signal]{filtfilt}}, \code{\link[signal]{butter}}, \code{\link[signal]{fir1}}
 }
 \examples{
 

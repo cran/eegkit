@@ -75,10 +75,9 @@ A vector of the form c(x1, x2, y1, y2) giving the coordinates of the plot region
 Produces plot of EEG cap and possibly returns cap row indices.
 }
 \references{
-  Adler, D., Murdoch, D., and others (2014). \emph{rgl: 3D visualization device system
-  (OpenGL)}. http://CRAN.R-project.org/package=rgl
+  Murdoch, D., and Adler, D. (2025). \emph{rgl: 3D Visualization Using OpenGL}. \doi{10.32614/CRAN.package.rgl}, R package version 1.3.18, http://CRAN.R-project.org/package=rgl
   
-  Oostenveld, R., and Praamstra, P. (2001). The Five percent electrode system for high-resolution EEG and ERP measurements. \emph{Clinical Neurophysiology, 112}, 713-719. 
+  Oostenveld, R., and Praamstra, P. (2001). The Five percent electrode system for high-resolution EEG and ERP measurements. \emph{Clinical Neurophysiology, 112}, 713-719. \doi{10.1016/S1388-2457(00)00527-7}
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

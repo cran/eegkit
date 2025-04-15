@@ -94,13 +94,7 @@ Margins to use for plot (see \code{par}).
 Produces plot of EEG spatial map with \code{NULL} return value.
 }
 \references{
-  Bache, K. & Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
-
-  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. http://www.downstate.edu/hbnl/
-  
-  Ingber, L. (1997). Statistical mechanics of neocortical interactions: Canonical momenta indicatros of electroencephalography. \emph{Physical Review E, 55}, 4578-4593.
-  
-  Ingber, L. (1998). Statistical mechanics of neocortical interactions: Training and testing canonical momenta indicators of EEG. \emph{Mathematical Computer Modelling, 27}, 33-64.
+  Begleiter, H. (1995). EEG Database [Dataset]. UCI Machine Learning Repository. \doi{10.24432/C5TS3D}
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

@@ -53,17 +53,17 @@ Additional inputs to \code{\link[ica]{icaimax}} or \code{\link[ica]{icafast}} fu
 \item{method}{ICA method (same as input).}
 }
 \references{
-Bell, A.J. & Sejnowski, T.J. (1995). An information-maximization approach to blind separation and blind deconvolution. \emph{Neural Computation, 7}, 1129-1159.
+Bell, A.J. & Sejnowski, T.J. (1995). An information-maximization approach to blind separation and blind deconvolution. \emph{Neural Computation, 7}, 1129-1159. \doi{10.1162/neco.1995.7.6.1129}
 
-Cardoso, J.F., & Souloumiac, A. (1993). Blind beamforming for non-Gaussian signals. \emph{IEE Proceedings-F, 140}, 362-370.
+Cardoso, J.F., & Souloumiac, A. (1993). Blind beamforming for non-Gaussian signals. \emph{IEE Proceedings-F, 140}, 362-370. \doi{10.1049/ip-f-2.1993.0054}
   
-Cardoso, J.F., & Souloumiac, A. (1996). Jacobi angles for simultaneous diagonalization. \emph{SIAM Journal on Matrix Analysis and Applications, 17}, 161-164.
+Cardoso, J.F., & Souloumiac, A. (1996). Jacobi angles for simultaneous diagonalization. \emph{SIAM Journal on Matrix Analysis and Applications, 17}, 161-164. \doi{10.1137/S0895479893259546}
 
-Helwig, N.E. (2018). \emph{ica: Independent Component Analysis}. http://CRAN.R-project.org/package=ica
+Helwig, N.E. (2022). \emph{ica: Independent Component Analysis}, \doi{10.32614/CRAN.package.ica}, R package version 1.0-3. http://CRAN.R-project.org/package=ica
 
-Helwig, N.E. & Hong, S. (2013). A critique of Tensor Probabilistic Independent Component Analysis: Implications and recommendations for multi-subject fMRI data analysis. \emph{Journal of Neuroscience Methods, 213}, 263-273.
+Helwig, N.E. & Hong, S. (2013). A critique of Tensor Probabilistic Independent Component Analysis: Implications and recommendations for multi-subject fMRI data analysis. \emph{Journal of Neuroscience Methods, 213}, 263-273. \doi{10.1016/j.jneumeth.2012.12.009}
 
-Hyvarinen, A. (1999). Fast and robust fixed-point algorithms for independent component analysis. \emph{IEEE Transactions on Neural Networks, 10}, 626-634.
+Hyvarinen, A. (1999). Fast and robust fixed-point algorithms for independent component analysis. \emph{IEEE Transactions on Neural Networks, 10}, 626-634. \doi{10.1109/72.761722}
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

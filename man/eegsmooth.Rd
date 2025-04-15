@@ -49,13 +49,14 @@ For spatial-temporal smoothing: an object of class "bigssa" (see \code{\link[big
 
 }
 \references{
-  Helwig, N. E. (2013). \emph{Fast and stable smoothing spline analysis of variance models for large samples with applications to electroencephalography data analysis}. Unpublished doctoral dissertation. University of Illinois at Urbana-Champaign.
+  Helwig, N. E. (2013). \emph{Fast and stable smoothing spline analysis of variance models for large samples with applications to electroencephalography data analysis}. Unpublished doctoral dissertation. University of Illinois at Urbana-Champaign. https://www.ideals.illinois.edu/items/44427
   
-  Helwig, N.E. (2015). \emph{bigsplines: Smoothing Splines for Large Samples}. http://CRAN.R-project.org/package=bigsplines
+  Helwig, N.E. (2015). \emph{bigsplines: Smoothing Splines for Large Samples}. \doi{10.32614/CRAN.package.bigsplines}, R package version
+  1.1-1, https://CRAN.R-project.org/package=bigsplines
   
-  Helwig, N. E. & Ma, P. (2015). Fast and stable multiple smoothing parameter selection in smoothing spline analysis of variance models with large samples. \emph{Journal of Computational and Graphical Statistics, 24}(3), 715-732.
+  Helwig, N. E. & Ma, P. (2015). Fast and stable multiple smoothing parameter selection in smoothing spline analysis of variance models with large samples. \emph{Journal of Computational and Graphical Statistics, 24}(3), 715-732. \doi{10.1080/10618600.2014.926819}
   
-  Helwig, N. E. & Ma, P. (2016). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. \emph{Statistics and Its Interface, 9}(4), 433-444.
+  Helwig, N. E. & Ma, P. (2016). Smoothing spline ANOVA for super large samples: Scalable computation via rounding parameters. \emph{Statistics and Its Interface, 9}(4), 433-444. \doi{10.4310/SII.2016.v9.n4.a3}
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

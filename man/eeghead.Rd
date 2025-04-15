@@ -16,10 +16,9 @@ data(eeghead)
 \source{
   Created by Nathaniel E. Helwig (2014) using:
 
-  Adler, D., Murdoch, D., and others (2014). \emph{rgl: 3D visualization device system
-  (OpenGL)}. http://CRAN.R-project.org/package=rgl
+  Murdoch, D., and Adler, D. (2025). \emph{rgl: 3D Visualization Using OpenGL}. \doi{10.32614/CRAN.package.rgl}, R package version 1.3.18, http://CRAN.R-project.org/package=rgl
   
-  Schlager, S. & authors of VCGLIB. (2014). Rvcg: Manipulations of triangular meshes (smoothing, quadric edge collapse decimation, im- and export of various mesh file-formats, cleaning, etc.) based on the VCGLIB API. R packge version 0.7.1. http://CRAN.R-project.org/package=Rvcg.
+  Schlager S (2017). Morpho and Rvcg - Shape Analysis in R. In Zheng G, Li S, Szekely G (eds.), Statistical Shape and Deformation Analysis, 217-256. Academic Press. ISBN 9780128104934.
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

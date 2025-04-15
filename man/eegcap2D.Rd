@@ -87,7 +87,7 @@ See \code{\link{eegcoord}} for the coordinates used to create plot.
 Produces plot of EEG cap.
 }
 \references{
-Oostenveld, R., and Praamstra, P. (2001). The Five percent electrode system for high-resolution EEG and ERP measurements. \emph{Clinical Neurophysiology, 112}, 713-719. 
+Oostenveld, R., and Praamstra, P. (2001). The Five percent electrode system for high-resolution EEG and ERP measurements. \emph{Clinical Neurophysiology, 112}, 713-719. \doi{10.1016/S1388-2457(00)00527-7}
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

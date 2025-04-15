@@ -39,7 +39,7 @@ If \code{x} is a matrix with \code{J} channels, returns a list with elements:
 \item{phase.shift }{\code{F} by \code{J} matrix: phase shift of signal at each frequency and channel}
 }
 \references{
-Cooley, James W., and Tukey, John W. (1965) An algorithm for the machine calculation of complex Fourier series, Math. Comput. 19(90), 297-301.
+Cooley, James W., and Tukey, John W. (1965) An algorithm for the machine calculation of complex Fourier series, Math. Comput. 19(90), 297-301. \doi{10.7551/mitpress/5222.003.0014}
 
 Singleton, R. C. (1979) Mixed Radix Fast Fourier Transforms, in Programs for Digital Signal Processing, IEEE Digital Signal Processing Committee eds. IEEE Press.
 }

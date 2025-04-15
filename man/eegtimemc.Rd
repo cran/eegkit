@@ -67,15 +67,10 @@ Polygon or line color for \code{voltSE}.
 Produces plot of EEG time course with \code{NULL} return value.
 }
 \references{
-  Bache, K. & Lichman, M. (2013). UCI Machine Learning Repository [http://archive.ics.uci.edu/ml]. Irvine, CA: University of California, School of Information and Computer Science.
-
-  Begleiter, H. \emph{Neurodynamics Laboratory}. State University of New York Health Center at Brooklyn. http://www.downstate.edu/hbnl/
+  Begleiter, H. (1995). EEG Database [Dataset]. UCI Machine Learning Repository. \doi{10.24432/C5TS3D}
   
-  Harrell, F., Dupont, C., and Others. \emph{Hmisc: Harrell Miscellaneous}. http://CRAN.R-project.org/package=Hmisc
-  
-  Ingber, L. (1997). Statistical mechanics of neocortical interactions: Canonical momenta indicatros of electroencephalography. \emph{Physical Review E, 55}, 4578-4593.
-  
-  Ingber, L. (1998). Statistical mechanics of neocortical interactions: Training and testing canonical momenta indicators of EEG. \emph{Mathematical Computer Modelling, 27}, 33-64.
+  Harrell Jr F (2025). Hmisc: Harrell Miscellaneous. \doi{10.32614/CRAN.package.Hmisc}, R package version 5.2-3,
+  https://CRAN.R-project.org/package=Hmisc
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>

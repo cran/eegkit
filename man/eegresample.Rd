@@ -24,7 +24,7 @@ Data are resampled using the "Linear Length Normalization" approach described in
 Resampled version of input data with \code{n} time points.
 }
 \references{
-Helwig, N. E., Hong, S., Hsiao-Wecksler E. T., & Polk, J. D. (2011). Methods to temporally align gait cycle data. Journal of Biomechanics, 44(3), 561-566.
+Helwig, N. E., Hong, S., Hsiao-Wecksler E. T., & Polk, J. D. (2011). Methods to temporally align gait cycle data. Journal of Biomechanics, 44(3), 561-566. \doi{10.1016/j.jbiomech.2010.09.015}
 }
 \author{
 Nathaniel E. Helwig <helwig@umn.edu>
